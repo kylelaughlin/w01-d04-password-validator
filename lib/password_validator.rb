@@ -33,5 +33,6 @@ def at_least_one_non_alpha_numeric?(password)
 end
 
 def check_for_password_string?(password)
-  password.dowcase.include? ("password")
+  !password.downcase.include?("password")
 end
+binding.pry

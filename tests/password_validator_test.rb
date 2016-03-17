@@ -66,6 +66,12 @@ class PasswordValidatorTest < Minitest::Test
     result = check_for_password_string?("pAssWord1Abjils&A")
     refute(result, "'pAssWord1Abjils&A' should be invalid becuase it contains the string 'password'")
   end
+
+  def test_assert_password_does_not_contain_password
+    result = check_for_password_string("1Abjils&A")
+    refute(result, "'1Abjils&A' should be valid becuase it does not contain password")
+  end
   
+
 
 end
