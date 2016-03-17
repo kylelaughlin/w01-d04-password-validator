@@ -20,7 +20,7 @@ class PasswordValidatorTest < Minitest::Test
     result = at_least_eight_characters?("1Abjils&")
     assert(result, "'1ABjils&' has 8 characters, should be valid")
   end
-  
+
   # We try a password of only 7 characters, expecting rejection
   def test_rejects_password_of_7_characters
     result = at_least_eight_characters?("1Abils&")
@@ -28,7 +28,13 @@ class PasswordValidatorTest < Minitest::Test
   end
 
   def test_valid_password
-    result = valid_password?("1Abils&a")
-    assert(result, "'1Abils&a' should be valid")
+    result = valid_password?("1Abjils&a")
+    assert(result, "'1Abijls&a' should be valid")
   end
+
+  def test_rejects_all_uppercase_passwords
+    result = at_least_one_lower_case?("1ABJILS&A")
+    refute(result, "'1ABJILS&A' should be invalid becuase it contains no lowercase")
+  end
+
 end
