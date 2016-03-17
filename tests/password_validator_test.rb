@@ -41,6 +41,11 @@ class PasswordValidatorTest < Minitest::Test
     result = at_least_one_lower_case?("1AbJILS&A")
     assert(result, "'1AbJILS&A' should be valid becuase it is mixed case")
   end
+
+  def test_rejects_no_number_password
+    result = at_least_one_number?("Abjils&A")
+    refute(result, "'Abjils&A' should be invalid becuase it does not contain a number")
+  end
   
 
 end
