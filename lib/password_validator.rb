@@ -21,4 +21,9 @@ def at_least_one_lower_case?(password)
   letters = password.gsub(/[^a-z]/,"")
   letters.length != 0
 end
+
+def at_least_one_number?(password)
+  numbers = password.gsub(/[^0-9]/,"")
+  numbers.length != 0
+end
 binding.pry

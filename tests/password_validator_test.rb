@@ -46,6 +46,11 @@ class PasswordValidatorTest < Minitest::Test
     result = at_least_one_number?("Abjils&A")
     refute(result, "'Abjils&A' should be invalid becuase it does not contain a number")
   end
+
+  def test_accepts_password_with_a_number
+    result = at_least_one_number?("1Abjils&A")
+    assert(result, "'1Abjils&A' should be valid becuase it contains at least one number")
+  end
   
 
 end
