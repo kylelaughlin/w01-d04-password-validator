@@ -26,4 +26,9 @@ def at_least_one_number?(password)
   numbers = password.gsub(/[^0-9]/,"")
   numbers.length != 0
 end
+
+def at_least_one_non_alpha_numeric?(password)
+  characters = password.gsub(/[A-Za-z0-9]/,"")
+  characters.length != 0
+end
 binding.pry
