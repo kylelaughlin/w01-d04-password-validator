@@ -51,6 +51,11 @@ class PasswordValidatorTest < Minitest::Test
     result = at_least_one_number?("1Abjils&A")
     assert(result, "'1Abjils&A' should be valid becuase it contains at least one number")
   end
+
+  def test_rejects_no_non_alpha_numeric_chars
+    result = at_least_one_non_alpha_numeric?("1AbjilsA")
+    refute(result, "'1AbjilsA' should be invalid becuase it does not contain any non-alpha-numeric chars")
+  end
   
 
 end
