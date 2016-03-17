@@ -62,4 +62,10 @@ class PasswordValidatorTest < Minitest::Test
     assert(result, "'1Abjils&A' should be valid becuase it does contain at least one non-alpha-numeric chars")
   end
 
+  def test_reject_password_with_password_included
+    result = check_for_password_string?("pAssWord1Abjils&A")
+    refute(result, "'pAssWord1Abjils&A' should be invalid becuase it contains the string 'password'")
+  end
+  
+
 end
