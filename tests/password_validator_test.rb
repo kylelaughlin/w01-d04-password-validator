@@ -67,10 +67,21 @@ class PasswordValidatorTest < Minitest::Test
     refute(result, "'pAssWord1Abjils&A' should be invalid becuase it contains the string 'password'")
   end
 
-  def test_assert_password_does_not_contain_password
+  def test_accepts_password_does_not_contain_password
     result = check_for_password_string?("1Abjils&A")
     assert(result, "'1Abjils&A' should be valid becuase it does not contain password")
   end
+
+  def test_accepts_valid_password
+    result = valid_password?("1Abjils&A")
+    assert(result, "'1Abjils&A' should be valid becuase if follows all the password requirements")
+  end
+
+  def test_reject_password_no_uppercase
+    result = valid_password?("1abjils&a")
+    refute(result, "'1abjils&a' should be invalid becuase it does not have a capital letter")
+  end
+  
 
 
 
