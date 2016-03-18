@@ -35,4 +35,3 @@ end
 def check_for_password_string?(password)
   !password.downcase.include?("password")
 end
-binding.pry
