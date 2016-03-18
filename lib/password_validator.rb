@@ -67,7 +67,7 @@ end
 #
 # +password: string representing the password to be verified
 #
-# Returns true or false depending on if the string contains 'password' in any 
+# Returns true or false depending on if the string contains 'password' in any
 # combination of capitalization
 def check_for_password_string?(password)
   !password.downcase.include?("password")
