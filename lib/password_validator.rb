@@ -73,7 +73,12 @@ def check_for_password_string?(password)
   !password.downcase.include?("password")
 end
 
-#This needs work error.
+# Tests to see if a string contains three characters in order (ex. 'abc' or '456')
+#
+# +password: string representing the password to be verified
+#
+# Returns true if the letter does not contain three in-order characters,
+# => otherwise it returns false
 def three_letters_in_order?(password)
   #subtract two becuase we do not need to check the last nor the second to last
   # => characters for 3 ordered characters
