@@ -77,7 +77,14 @@ class PasswordValidatorTest < Minitest::Test
     refute(result, "'1abjils&a' should be invalid becuase it does not have a capital letter")
   end
 
+  def test_reject_three_letters_in_alphabetic_order_at_begining
+    result = three_letters_in_order?("abc1Abjils&A")
+    refute(result, "'abc1Abjils&A' should be invalid becuase it contains 'abc'")
+  end
 
-
+  def test_reject_three_letters_in_order_in_middle
+    result = three_letters_in_order?("1Abjijkls&A")
+    refute(result,"'1Abjijkls&A' should be invalid becuase it contains 'ijk'")
+  end
 
 end

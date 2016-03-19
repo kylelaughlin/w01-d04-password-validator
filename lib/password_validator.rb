@@ -72,3 +72,20 @@ end
 def check_for_password_string?(password)
   !password.downcase.include?("password")
 end
+
+#This needs work error.
+def three_letters_in_order?(password)
+  #subtract two becuase we do not need to check the last nor the second to last
+  # => characters for 3 ordered characters
+  range = password.length - 2
+  password.downcase!
+  ordered_characters = false
+  (0...range).each do |i|
+    if password[i+1] == password[i].next && password[i+2] == password[i].next.next
+        ordered_characters = true
+    end
+  end
+  !ordered_characters
+end
+
+binding.pry
